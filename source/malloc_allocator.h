@@ -1,32 +1,34 @@
 #pragma once
 
 template <class T>
-struct Mallocator
+struct malloc_allocator
 {
     typedef T value_type;
-    Mallocator() noexcept {} //default ctor not required by C++ Standard Library
+    malloc_allocator() noexcept {}
 
-    // A converting copy constructor:
-    template<class U> Mallocator(const Mallocator<U>&) noexcept {}
-    template<class U> bool operator==(const Mallocator<U>&) const noexcept
+    template<class U> malloc_allocator(const malloc_allocator<U>&) noexcept {}
+
+    template<class U> bool operator==(const malloc_allocator<U>&) const noexcept
     {
         return true;
     }
-    template<class U> bool operator!=(const Mallocator<U>&) const noexcept
+
+    template<class U> bool operator!=(const malloc_allocator<U>&) const noexcept
     {
         return false;
     }
+
     T* allocate(const size_t n) const;
     void deallocate(T* const p, size_t) const noexcept;
 
     template<typename U>
     struct rebind {
-        typedef Mallocator<U> other;
+        typedef malloc_allocator<U> other;
     };
 };
 
 template <class T>
-T* Mallocator<T>::allocate(const size_t n) const
+T* malloc_allocator<T>::allocate(const size_t n) const
 {
     if (n == 0)
     {
@@ -42,7 +44,7 @@ T* Mallocator<T>::allocate(const size_t n) const
 }
 
 template<class T>
-void Mallocator<T>::deallocate(T * const p, size_t) const noexcept
+void malloc_allocator<T>::deallocate(T * const p, size_t) const noexcept
 {
     free(p);
 }

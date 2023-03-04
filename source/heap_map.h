@@ -1,8 +1,8 @@
 #pragma once
 
-#include "mallocator.h"
+#include "malloc_allocator.h"
 
-using HeapMapAllocator = Mallocator<std::pair<void* const,size_t>>;
+using HeapMapAllocator = malloc_allocator<std::pair<void* const,size_t>>;
 
 class heap_map
 {
