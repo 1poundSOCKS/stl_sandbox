@@ -1,0 +1,130 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "build app",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/std:c++latest",
+				"/await",
+				"/MD",
+				"/W4",
+				"/WX",
+				"/fp:fast",
+				"/Yupch.h",
+				"/Fo${workspaceFolder}/build/",
+				"/Fe${workspaceFolder}/app.exe",
+				"${workspaceFolder}/source/*.cpp",
+				"${workspaceFolder}/build/pch.obj",
+				"/IC:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/include",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/cppwinrt",
+				"/I${workspaceFolder}/packages/gtest/include",
+				"/I${workspaceFolder}/source/",
+				"/link /LIBPATH:\"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/lib/x64\" /LIBPATH:\"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0/um/x64\" /LIBPATH:\"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0/ucrt/x64\" /LIBPATH:\"${workspaceFolder}/packages/gtest/lib/x64/Release\"  /LIBPATH:\"C:/Users/mathe/source/repos/vcpkg/vcpkg/packages/jsoncpp_x64-windows/lib\"",
+				"/SUBSYSTEM:CONSOLE"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "build pch",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/std:c++latest",
+				"/await",
+				"/MD",
+				"/W4",
+				"/WX",
+				"/fp:fast",
+				"/Ycpch.h",
+				"/c",
+				"/Fo${workspaceFolder}/build/",
+				"${workspaceFolder}/source/pch/pch.cpp",
+				"/IC:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/include",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/cppwinrt",
+				"/I${workspaceFolder}/packages/gtest/include",
+				"/I${workspaceFolder}/source/"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		},
+		{
+			"type": "cppbuild",
+			"label": "build tests",
+			"command": "cl.exe",
+			"args": [
+				"/Zi",
+				"/EHsc",
+				"/nologo",
+				"/std:c++latest",
+				"/await",
+				"/MD",
+				"/W4",
+				"/WX",
+				"/fp:fast",
+				"/Yupch.h",
+				"/Fo${workspaceFolder}/build/",
+				"/Fe${workspaceFolder}/test.exe",
+				"${workspaceFolder}/source/*.cpp",
+				"${workspaceFolder}/source/framework/*.cpp",
+				"${workspaceFolder}/source/screens/play/*.cpp",
+				"${workspaceFolder}/source/screens/main_menu/*.cpp",
+				"${workspaceFolder}/source/screens/level_edit/*.cpp",
+				"${workspaceFolder}/build/pch.obj",
+				"/IC:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/include",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+				"/IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/cppwinrt",
+				"/I${workspaceFolder}/packages/gtest/include",
+				"/I${workspaceFolder}/source/",
+				"/I${workspaceFolder}/source/framework/",
+				"/link /LIBPATH:\"C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/lib/x64\" /LIBPATH:\"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0/um/x64\" /LIBPATH:\"C:/Program Files (x86)/Windows Kits/10/Lib/10.0.19041.0/ucrt/x64\" /LIBPATH:\"${workspaceFolder}/packages/gtest/lib/x64/Release\"  /LIBPATH:\"C:/Users/mathe/source/repos/vcpkg/vcpkg/packages/jsoncpp_x64-windows/lib\"",
+				"/SUBSYSTEM:CONSOLE"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$msCompile"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: cl.exe"
+		}
+	]
+}
