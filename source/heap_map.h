@@ -2,11 +2,7 @@
 
 #include "mallocator.h"
 
-// #pragma warning( suppress : 4005 )
-// #define _ENFORCE_MATCHING_ALLOCATORS 0
-
 using HeapMapAllocator = Mallocator<std::pair<char* const,size_t>>;
-//using HeapMapAllocator = std::Allocator<std::pair<const char*, size_t>>;
 
 class heap_map
 {
